@@ -1,0 +1,78 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-sm-12">
+        <div class="wrap d-lg-flex">
+          <div class="img" style="background-image: url(assets/images/logo.png)"></div>
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h1 class="mb-4">Sign In</h1>
+              </div>
+            </div>
+
+            <form [formGroup]="loginForm">
+              <mat-form-field style="margin-left: -17px">
+                <input type="text" matInput [(ngModel)]="user.email" placeholder="Username" formControlName="email" />
+                <!-- Here we can display error messages/hints for the user, if one of the Validators adds an error to the email
+                 with the .touched check we only display the hints if the input was touched by the users -->
+                <mat-error *ngIf="
+                    this.loginForm.get('email')?.touched &&
+                    this.loginForm.get('email')?.hasError('required')
+                  ">
+                  Username is required</mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput [(ngModel)]="user.password" [type]="hide ? 'password' : 'text'" formControlName="password" />
+                <mat-error *ngIf="
+                    this.loginForm.get('password')?.touched &&
+                    this.loginForm.get('password')?.hasError('required')
+                  ">
+                  Password is required</mat-error>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                </button>
+              </mat-form-field>
+              <div class="form-group">
+                <button style="width: 12rem" mat-raised-button (click)="login()"
+                  class="form-control btn btn-primary rounded submit px-3">
+                  Sign In
+                </button>
+              </div>
+              <div class="form-group d-md-flex">
+                <div class="md-left sm-center w-100">
+                  <label class="checkbox-wrap checkbox-primary sm-center">Remember Me
+                    <input type="checkbox" checked />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <div class="text-md-right w-100">
+                  <a href="#">Forgot Password</a>
+                </div>
+              </div>
+            </form>
+            <p class="text-center">
+              Not a member?
+              <a [routerLink]="['/register']">Sign Up</a>
+            </p>
+            <div class="w-50" style="margin-left: 35px">
+              <p class="social-media d-flex justify-content-end">
+                <a href="https://www.facebook.com/For-me-110598575050639"
+                  class="social-icon d-flex align-items-center justify-content-center"><span
+                    class="fa fa-facebook"></span></a>
+                <a href="https://www.instagram.com/formemagazine.22/?hl=en"
+                  class="social-icon d-flex align-items-center justify-content-center"><span
+                    class="fa fa-instagram"></span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

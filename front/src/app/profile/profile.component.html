@@ -1,0 +1,155 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<app-header></app-header>
+<div class="container" style="margin-top: 6.5rem">
+  <div class="row flex-lg-nowrap">
+    <div class="col-12 col-lg-auto mb-3" style="width: 200px">
+      <div class="card p-3">
+        <div class="vertical-tab" role="tabpanel">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation">
+              <a href="#profile" aria-controls="profile" aria-selected="true" role="tab" data-toggle="tab"><i
+                  class="fa-solid fa-user"></i>Profile</a>
+            </li>
+            <li role="presentation">
+              <a routerLink="/profile/security" aria-controls="security" role="tab" data-toggle="tab"><i
+                  class="fa-solid fa-shield"></i>Security</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content tabs">
+      <!-- profile tab -->
+      <!-- <div role="tabpanel" class="active tab-pane fade in" id="profile"> -->
+      <div class="col">
+        <div class="row">
+          <div class="col mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="e-profile">
+                  <div class="row">
+                    <div class="col-12 col-sm-auto mb-3">
+                      <div class="mx-auto" style="width: 140px">
+                        <div class="d-flex justify-content-center align-items-center rounded" style="
+                            height: 140px;
+                            background-color: rgb(233, 236, 239);
+                          ">
+  
+                          <img [src]="url" height="150" width="150" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                      <div class="text-center text-sm-left mb-2 mb-sm-0">
+                        <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">
+                          {{user.data.FirstName + ' '+ user.data.LastName}}
+                        </h4>
+
+                        <div class="mt-2">
+                          <input  type="file" id="profile_pic" accept="image/png, image/gif, image/jpeg"
+                          (change)="selectImage($event)" />
+                          <label for="profile_pic" class="btn btn-primary"><i class="fa fa-fw fa-camera"></i>Change
+                            profile_pic</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="tab-content pt-3">
+                    <div class="tab-pane active">
+                      <form class="form" novalidate="">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>First Name</label>
+                                  <input [(ngModel)]="user.data.FirstName" class="form-control" type="text" name="firstname" placeholder="First Name" />
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Last Name</label>
+                                  <input [(ngModel)]="user.data.LastName" class="form-control" type="text" name="lastname" placeholder="Last Name" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Email</label>
+                                  <input [(ngModel)]="user.data.email" class="form-control" type="text" name="email" placeholder="user@example.com" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Phone Number</label>
+                                  <input [(ngModel)]="user.data.phone" class="form-control" type="text" name="phone" placeholder="(+216) 99 999 999" />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col mb-3">
+                                <div class="form-group">
+                                  <label>Adress</label>
+                                  <textarea [(ngModel)]="user.data.adress" class="form-control" name="adress" placeholder="my adress here"></textarea>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Profession</label>
+                                  <input [(ngModel)]="user.data.profession" class="form-control" name="profession" type="text" placeholder="job here" />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col d-flex justify-content-end">
+                            <button (click)="modifier()" class="btn btn-primary" type="submit" >
+                              Save Changes
+                            </button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3 mb-3">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="px-xl-3">
+                  <button (click)="logOut()" class="btn btn-block btn-secondary">
+                    <i class="fa fa-sign-out"></i>
+                    <span>Logout</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title font-weight-bold">Support</h6>
+                <p class="card-text">
+                  Get fast, free help from our friendly assistants.
+                </p>
+                <button type="button" class="btn btn-primary">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

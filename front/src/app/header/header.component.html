@@ -1,0 +1,128 @@
+<!--================ Start header Top Area =================-->
+<section
+  class="header-main"
+  style="position: fixed; z-index: 999999; width: 100%; top: 0"
+>
+  <div class="container-fluid" id="top_head">
+    <div class="row align-items-center">
+      <div class="col-lg-4 col-sm-4 col-md-4 col-5">
+        <a href="" class="brand-wrap" data-abc="true">
+          <img class="logo" src="../../assets/images/logo.png" />
+          <span class="logo">ForMe </span>
+        </a>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-sm-8 col-md-4 d-none d-md-block">
+        <form action="#" class="search-wrap">
+          <div class="input-group w-75" style="margin-left: 15px">
+            <input
+              type="text"
+              class="form-control search-form"
+              style="width: 55%"
+              placeholder="Search"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-primary search-button" type="submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4 col-xl-4 col-sm-8 col-md-4 col-7">
+        <div class="d-flex justify-content-end">
+          <a class="nav-link nav-user-img" href="#"
+            ><span class="login">About Us</span></a
+          >
+          <span class="vl"></span>
+
+          <span class="vl"></span>
+
+          <a
+            *ngIf="readLocalStorageValue()==false"
+            class="nav-link nav-user-img"
+            [routerLink]="['/login']"
+            data-toggle="modal"
+            data-target="#login-modal"
+            data-abc="true"
+            ><span class="login">SignIn</span></a
+          >
+          <a
+            *ngIf="readLocalStorageValue()==true"
+            class="nav-link nav-user-img"
+            [routerLink]="['/profile']"
+            data-toggle="modal"
+            data-target="#login-modal"
+            data-abc="true"
+            ><span class="login">MyAccount</span></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-md navbar-main border-bottom">
+    <div class="container-fluid">
+      <form class="d-md-none my-2">
+        <div class="input-group">
+          <input
+            type="search"
+            name="search"
+            class="form-control"
+            placeholder="Search"
+            required=""
+          />
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <button
+        class="navbar-toggler collapsed"
+        type="button"
+        data-toggle="collapse"
+        data-target="#dropdown6"
+        aria-expanded="false"
+      >
+        <span
+          class="navbar-toggler-icon"
+          style="
+            background-image: url(https://img.icons8.com/ios/50/000000/menu.png);
+          "
+        ></span>
+      </button>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="navbar-collapse col-xl-11 collapse" id="dropdown6">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="" data-abc="true">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href=""
+              data-toggle="dropdown"
+              data-abc="true"
+              aria-expanded="false"
+              >Categories</a
+            >
+            <!-- <div *ngFor="let cat of categorys" class="dropdown-menu">
+              <a class="dropdown-item" href="" data-abc="true">{{
+                cat.name
+              }}</a>
+            </div> -->
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="" data-abc="true">Latest News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" data-abc="true">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+<!-- End header MEnu Area -->

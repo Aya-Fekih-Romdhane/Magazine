@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto+Slab:wght@400;500&display=swap');
+#top_head{
+  position: relative;
+  padding-bottom: 2px;
+  background-color: #a8c08b
+}
+
+.logo {
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 30px;
+  font-weight: 600;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.brand-wrap {
+  text-decoration: none !important
+}
+
+.icon-sm {
+  width: 48px;
+  height: 48px;
+  line-height: 48px !important;
+  font-size: 20px
+}
+
+.widget-header {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative
+}
+
+.widget-header .notify {
+  position: absolute;
+  top: -3px;
+  right: -10px
+}
+
+.notify {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  display: inline-block;
+  padding: .25em .6em;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  border-radius: 3rem;
+  color: #fff;
+  background-color: #fa3434
+}
+
+.mr-3,
+.mx-3 {
+  margin-right: 1rem !important
+}
+
+.search-form {
+  border: 1px solid #ffffff !important
+}
+
+.search-button {
+  color: black;
+  background-color: #ffffff;
+  border-color: #ffffff
+}
+
+.navbar-main {
+  background-color: #fff
+}
+
+.navbar-toggler {
+  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 0, 0, 0.1) !important
+}
+
+.navbar-toggler {
+  padding: 4px;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.37rem
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .5rem 7px 0px;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: .25rem
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: .45rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: red;
+  border: 0
+}
+
+.navbar-toggler-icon {
+  background-image: url(https://img.icons8.com/ios/50/000000/menu.png)
+}
+
+.nav-link {
+  font-weight: 600;
+
+}
+
+.vl {
+  border-left: 1px solid #fff;
+  height: 100%
+}
+
+.fas {
+  color: #fff
+}
+
+.login {
+  color: white
+}
+.nav-item {
+  display: block;
+  list-style-type: disc;
+  padding-inline-start: 30px;
+}
+#dropdown6{
+  line-height: 5px;
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  color: #797979;
+}

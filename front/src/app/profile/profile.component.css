@@ -1,0 +1,30 @@
+body{
+  margin-top:20px;
+  background:#f8f8f8
+}
+
+input[type=file]{
+  width:0;
+  height:0;
+  z-index:-1;
+  position:absolute;
+  overflow: hidden;
+  opacity: 0;
+ }
+
+#security{
+  margin-left: 5rem;
+}
+.p-3{
+  width: 27%;
+  min-width: 27%;
+ vertical-align: top;
+  display: table-cell;
+   font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.nav-tabs{
+  border-bottom: none;
+}

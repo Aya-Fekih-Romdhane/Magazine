@@ -1,0 +1,50 @@
+@media (min-width: 1200px ) {
+  .container{
+      max-width: 100rem;
+  }
+}
+@media (max-width: 900px) {
+  .container{
+    text-align:center ;
+  }
+}
+@media (max-width: 991.98px){
+.img, .login-wrap {
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+}
+
+.ftco-section{
+  position:fixed;
+  top:0;
+  left:0;
+
+  width: 100%;
+  height: 100%;
+  /* background-image:url(../../assets/images/output-onlineimagetools.png) ; */
+  width: 100%;
+}
+
+h1{
+  font-size: 26px;
+  font-weight: 600;
+  margin-left: -1rem ;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+  text-transform:uppercase;
+   letter-spacing:1px;
+  background-image: radial-gradient(circle, #a8c082 3%, #ae37cf);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+form{
+  padding: 15px;
+  padding-left: 0px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+

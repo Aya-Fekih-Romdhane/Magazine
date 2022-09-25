@@ -1,0 +1,138 @@
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-7 col-sm-12">
+        <div class="wrap d-lg-flex">
+          <div class="img" style="background-image: url(assets/images/bg-1.jpg)"></div>
+          <div class="register-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h1 class="mb-4">Register</h1>
+              </div>
+            </div>
+
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+              <mat-form-field>
+                <input type="email" [(ngModel)]="user.email" matInput placeholder="Email" formControlName="email" />
+                <!-- Here we can display error messages/hints for the user, if one of the Validators adds an error to the email
+                 with the .touched check we only display the hints if the input was touched by the users -->
+                <mat-error *ngIf="
+                    this.registerForm.get('email')?.touched &&
+                    this.registerForm.get('email')?.hasError('required')
+                  ">
+                  Email is required</mat-error>
+                <mat-error *ngIf="
+                    this.registerForm.get('email')?.touched &&
+                    this.registerForm.get('email')?.hasError('email')
+                  ">
+                  Email must be a valid Email</mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field>
+                <input type="text" [(ngModel)]="user.FirstName" matInput placeholder="First Name"
+                  formControlName="firstname" />
+                <mat-error *ngIf="
+                    this.registerForm.get('firstname')?.touched &&
+                    this.registerForm.get('firstname')?.hasError('required')
+                  ">
+                  First Name is required</mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field>
+                <input type="text" matInput [(ngModel)]="user.LastName" placeholder="Last Name"
+                  formControlName="lastname" />
+                <mat-error *ngIf="
+                    this.registerForm.get('lastname')?.touched &&
+                    this.registerForm.get('lastname')?.hasError('required')
+                  ">
+                  Last Name is required</mat-error>
+              </mat-form-field>
+              <br />
+              <br />
+
+              <mat-form-field>
+                <input type="number" [(ngModel)]="user.phone" matInput placeholder="Phone number"
+                  formControlName="phone" />
+                <mat-error *ngIf="
+                    this.registerForm.get('phone')?.touched &&
+                    this.registerForm.get('phone')?.hasError('required')
+                  ">
+                  Phone Number is required</mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field>
+                <input type="text" matInput [(ngModel)]="user.adress" placeholder="Adress" formControlName="adress" />
+                <mat-error *ngIf="
+                    this.registerForm.get('adress')?.touched &&
+                    this.registerForm.get('adress')?.hasError('required')
+                  ">
+                  adress is required</mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field style="margin-left: 1rem">
+                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" placeholder="Password"
+                  formControlName="password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                </button>
+                <mat-error *ngIf="
+                    this.registerForm.get('password')?.touched &&
+                    this.registerForm.get('password')?.hasError('required')
+                  ">
+                  Password is required</mat-error>
+              </mat-form-field>
+              <br />
+              <mat-form-field style="margin-left: 1rem">
+                <input matInput [type]="hidee ? 'password' : 'text'" matInput placeholder="Password Confirmation"
+                  formControlName="passwordConfirm" />
+                <button mat-icon-button matSuffix (click)="hidee = !hidee" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hidee">
+                  <mat-icon>{{
+                    hidee ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                </button>
+                <mat-error *ngIf="
+                    this.registerForm.get('passwordConfirm')?.touched &&
+                    this.registerForm
+                      .get('passwordConfirm')
+                      ?.hasError('required')
+                  ">
+                  Password Confirmation is required</mat-error>
+              </mat-form-field>
+
+              <mat-error *ngIf="
+                  this.registerForm.get('passwordConfirm')?.dirty &&
+                  this.registerForm.hasError('passwordsNotMatching')
+                ">
+                Passwords are not matching!</mat-error>
+              <br />
+              <!-- Button is disabled(not clickable), if our RegisterForm contains Validation Errors -->
+              <button class="form-control btn btn-primary rounded submit px-3" (click)="register()"
+                style="width: 12rem; background-color: #a8c082 !important" type="submit" mat-raised-button
+                [disabled]="!registerForm.valid">
+                Register
+              </button>
+            </form>
+            <p class="text-center">
+              Already a member?
+              <a [routerLink]="['/login']">Sign In</a>
+            </p>
+            <div class="w-75" style="margin: 0.5rem -1rem -3rem">
+              <p class="social-media d-flex justify-content-end">
+                <a href="https://www.facebook.com/For-me-110598575050639"
+                  class="social-icon d-flex align-items-center justify-content-center"><span
+                    class="fa fa-facebook"></span></a>
+                <a href="https://www.instagram.com/formemagazine.22/?hl=en"
+                  class="social-icon d-flex align-items-center justify-content-center"><span
+                    class="fa fa-instagram"></span></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
